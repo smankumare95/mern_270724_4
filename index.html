@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <title>This is my first app</title>
+
+        <style>
+        *{
+            font-size: 50px;
+        }
+        </style>
+    </head>
+
+    <body style="background-color: azure;">
+        <center>
+            <h1 style="font-size: 70px;">Greeting App</h1>
+            <form onsubmit="show()"> 
+                <input type="number" step="any" placeholder="Enter number" id="number"/>
+
+                <button type="submit">
+                    Show
+                </button>
+            </form>
+
+            <h2 id="msg" style="font-size: 50px;"></h2>
+
+            <script>
+                function show(){
+                    event.preventDefault();
+                    let number = document.getElementById('number');
+                    let message = document.getElementById('msg');
+                    
+                    if (number.value === "")
+                    {
+                        message.innerHTML = "";
+                        alert("Please enter your number");
+                        number.focus();
+                        return;
+                    }
+
+                    let sqaure = parseFloat(number.value) * parseFloat(number.value);
+
+                    message.innerHTML = sqaure.toFixed(2)
+                }
+
+            </script>
+        </center>
+    </body>
+</html>
